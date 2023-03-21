@@ -90,7 +90,7 @@ table {
     border-radius: 5px;
     padding: .5em;
     font-size: .8em;
-    background-color: rgb(25, 204, 25);
+    background-color: rgb(39, 186, 39);
     color: white;
     border: 1px rgb(115, 204, 115) solid;
 } 
@@ -115,5 +115,19 @@ form label {
     margin-right: 6%;
 }
 
+.created-memes-container {
+    height: 100vh;
+}
+
+.meme {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2em;
+}
 
 
