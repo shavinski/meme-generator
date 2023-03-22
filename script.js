@@ -3,23 +3,55 @@ const topTextInput = document.querySelector('#top-text');
 const botTextInput = document.querySelector('#bot-text');
 const form = document.querySelector('form')
 const memeContainer = document.querySelector('.created-memes-container')
+const letters = document.querySelectorAll('.letter');
 
-// console.log(image.value);
+
+// Changes color of the heading of the site 
+//
+
+function getRandomRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    
+    return `rgb(${r}, ${g}, ${b})`
+};
+
+
+setInterval(function() {
+    for (let letter of letters) {
+        letter.style.color = getRandomRGB();
+    };
+}, 1000);
+
+
+
+// Uploads image to meme container and adds the top text and bottom text to image as well
+//
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    let div = document.createElement('div');
+    // let div = document.createElement('div');
     let img = document.createElement('img');
+    let imgTopText = document.createElement('div');
+    let imgBotText = document.createElement('div');
 
-    img.id = 'imgId';
+    img.id = 'meme-submit';
     img.src = imageInput.value;
+    img.style.margin = '2%'
+    memeContainer.append(img);
 
-    memeContainer.append(div);
-    div.append(img)
-    div.classList.toggle('meme')
+    imgTopText = topTextInput.value;
+    imgBotText = botTextInput.value;
+    img.append(imgTopText);
+    img.append(imgBotText);
 
-    console.log(img.src.height);
+
+
+    // div.append(img)
+    // div.classList.toggle('meme')
+
 
     imageInput.value = '';
     topTextInput.value = '';
