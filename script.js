@@ -4,6 +4,12 @@ const botTextInput = document.querySelector('#bot-text');
 const form = document.querySelector('form')
 const memeContainer = document.querySelector('.created-memes-container')
 const letters = document.querySelectorAll('.letter');
+const body = document.querySelector('body')
+
+// let div = document.createElement('div');
+// let img = document.createElement('img');
+// let topText = document.createElement('p')
+// let botText = document.createElement('p')
 
 
 // Changes color of the heading of the site 
@@ -25,55 +31,39 @@ setInterval(function() {
 }, 1000);
 
 
-
 // Uploads image to meme container and adds the top text and bottom text to image as well
 //
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // let div = document.createElement('div');
+    let div = document.createElement('div');
     let img = document.createElement('img');
-    let imgTopText = document.createElement('div');
-    let imgBotText = document.createElement('div');
+    let topText = document.createElement('p')
+    let botText = document.createElement('p')
 
-    img.id = 'meme-submit';
+    body.append(div);
+    div.append(img);
+    div.append(topText);
+    div.append(botText);
+
+    topText.classList.add('top')
+    botText.classList.add('bot')
+
+
     img.src = imageInput.value;
-    img.style.margin = '2%'
-    memeContainer.append(img);
+    topText.innerText = topTextInput.value
+    botText.innerText = botTextInput.value
 
-    imgTopText = topTextInput.value;
-    imgBotText = botTextInput.value;
-    img.append(imgTopText);
-    img.append(imgBotText);
-
-
-
-    // div.append(img)
-    // div.classList.toggle('meme')
-
+    memeContainer.append(div);
 
     imageInput.value = '';
     topTextInput.value = '';
     botTextInput.value = '';
 
-    // div.style.cssText = `height: ${img.naturalHeight}; width: ${img.naturalWidth}`
-
-
-
-
-
-
-    // console.log(event, imageInput.value);
-
-    // let img = document.querySelector('image')
-    // const meme = document.createElement('div');
-    // const memeTopText = document.createElement('div');
-    // const memeBotText = document.createElement('div');
-
-    // meme.classList.toggle('meme');
-    // meme.style.cssText = `background-image:url(${image.value}; height: ${image.clientHeight}; width: ${image.clientWidth}`
-    // memeContainer.append(meme);
-
-    // meme.append(memeBotText, memeTopText);
+    div.addEventListener('click', function(e) {
+        console.log(e.target);
+        div.remove();
+    });
 });
+
