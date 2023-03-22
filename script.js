@@ -15,18 +15,16 @@ const body = document.querySelector('body')
 // Changes color of the heading of the site 
 //
 
-function getRandomRGB() {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+function getRandomColor() {
+    const r = `hsl(${Math.random() * 360}, 100%, 50%)`;
     
-    return `rgb(${r}, ${g}, ${b})`
+    return `${r}`
 };
 
 
 setInterval(function() {
     for (let letter of letters) {
-        letter.style.color = getRandomRGB();
+        letter.style.color = getRandomColor();
     };
 }, 1000);
 

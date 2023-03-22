@@ -124,17 +124,21 @@ form label {
     margin-right: 6%;
 }
 
-.created-memes-container {
-    padding: 3em;
-}
 
 .created-memes-container div {
     display: inline-block;
     position: relative;
     margin: 2%;
-    max-width: 100vw;
-    top: 1%;
+    /* max-width: 100vw; */
+    /* top: 1%; */
     border-radius: 10px;
+}
+
+.created-memes-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .created-memes-container img {
@@ -164,6 +168,7 @@ form label {
 .created-memes-container div:hover {
     opacity: .5;
     cursor: pointer;
+    transform: scale(.95);
 }
 
 
