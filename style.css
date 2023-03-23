@@ -129,8 +129,6 @@ form label {
     display: inline-block;
     position: relative;
     margin: 2%;
-    /* max-width: 100vw; */
-    /* top: 1%; */
     border-radius: 10px;
 }
 
@@ -165,10 +163,12 @@ form label {
     bottom: 1%;
 }
 
-.created-memes-container div:hover {
+.created-memes-container img:hover {
     opacity: .5;
+    background-color: black;
     cursor: pointer;
     transform: scale(.95);
+    background-image: url(img/delete\ \(1\).png);
 }
 
 

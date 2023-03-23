@@ -37,17 +37,18 @@ form.addEventListener('submit', function(event) {
 
     let div = document.createElement('div');
     let img = document.createElement('img');
-    let topText = document.createElement('p')
-    let botText = document.createElement('p')
+    let topText = document.createElement('p');
+    let botText = document.createElement('p');
+    
 
     body.append(div);
     div.append(img);
     div.append(topText);
     div.append(botText);
+    
 
-    topText.classList.add('top')
-    botText.classList.add('bot')
-
+    topText.classList.add('top');
+    botText.classList.add('bot');
 
     img.src = imageInput.value;
     topText.innerText = topTextInput.value
