@@ -47,6 +47,7 @@ form.addEventListener('submit', function(event) {
     div.append(botText);
     
 
+    div.classList.add('meme');
     topText.classList.add('top');
     botText.classList.add('bot');
 
@@ -55,6 +56,8 @@ form.addEventListener('submit', function(event) {
     botText.innerText = botTextInput.value
 
     memeContainer.append(div);
+
+    console.log(img.src, img.height, img.width);
 
     imageInput.value = '';
     topTextInput.value = '';
