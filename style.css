@@ -53,7 +53,7 @@ table {
 }
 
 :root {
-    --grey: #a9a8a7;
+    --grey: #e2e2e2;
 }
 
 .header, .form-container {
@@ -137,7 +137,6 @@ form label {
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    /* height:min-content */
 }
 
 .created-memes-container img {
