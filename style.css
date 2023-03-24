@@ -125,7 +125,7 @@ form label {
 }
 
 
-.created-memes-container div {
+.meme {
     display: inline-block;
     position: relative;
     margin: 2%;
@@ -163,8 +163,25 @@ form label {
     bottom: 1%;
 }
 
-.created-memes-container div:hover {
+.trash {
+    opacity: 0;
+    position: absolute;
+    left: 42%;
+    transform: translateX(-50%);
+     /* Center the icon vertically */
+    top: 42%;
+    transform: translateY(-50%);
+}
+
+.meme:hover .trash {
+    transform: scale(1.01);
+    opacity: 1;
+    transition: all 0.2s linear;
+}
+
+.meme:hover {
     cursor: pointer;
+    transition: all 0.2s linear;
     transform: scale(1.01);
     opacity: .5;
 }

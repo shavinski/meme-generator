@@ -39,25 +39,31 @@ form.addEventListener('submit', function(event) {
     let img = document.createElement('img');
     let topText = document.createElement('p');
     let botText = document.createElement('p');
+    let trashIcon = document.createElement('a');
+    let trashIconImg = document.createElement('img');
     
 
     body.append(div);
-    div.append(img);
-    div.append(topText);
-    div.append(botText);
+    div.classList.add('meme')
+    div.append(img, topText, botText, trashIcon);
+    memeContainer.append(div);
+    // div.append(topText);
+    // div.append(botText);
     
-
+    
     div.classList.add('meme');
     topText.classList.add('top');
     botText.classList.add('bot');
+    trashIcon.classList.add('trash')
+    trashIcon.href = '#'
+    trashIconImg.src = `img/trash.png`
+    trashIcon.append(trashIconImg)
 
+    
     img.src = imageInput.value;
     topText.innerText = topTextInput.value
     botText.innerText = botTextInput.value
 
-    memeContainer.append(div);
-
-    console.log(img.src, img.height, img.width);
 
     imageInput.value = '';
     topTextInput.value = '';
