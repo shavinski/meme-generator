@@ -6,10 +6,6 @@ const memeContainer = document.querySelector('.created-memes-container')
 const letters = document.querySelectorAll('.letter');
 const body = document.querySelector('body')
 
-// let div = document.createElement('div');
-// let img = document.createElement('img');
-// let topText = document.createElement('p')
-// let botText = document.createElement('p')
 
 
 // Changes color of the heading of the site 
@@ -43,34 +39,27 @@ form.addEventListener('submit', function(event) {
     let trashIconImg = document.createElement('img');
     
 
-    body.append(div);
+    memeContainer.append(div);
     div.classList.add('meme')
     div.append(img, topText, botText, trashIcon);
-    memeContainer.append(div);
-    // div.append(topText);
-    // div.append(botText);
-    
-    
-    div.classList.add('meme');
+
+
     topText.classList.add('top');
     botText.classList.add('bot');
     trashIcon.classList.add('trash')
     trashIcon.href = '#'
     trashIconImg.src = `img/trash.png`
     trashIcon.append(trashIconImg)
-
     
     img.src = imageInput.value;
     topText.innerText = topTextInput.value
     botText.innerText = botTextInput.value
-
 
     imageInput.value = '';
     topTextInput.value = '';
     botTextInput.value = '';
 
     div.addEventListener('click', function(e) {
-        console.log(e.target);
         div.remove();
     });
 });
